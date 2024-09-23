@@ -1,5 +1,7 @@
 # FARMSIGHT: Autonomous Field Surveyor Rover
 
+(UNDER DEVLOPMENT)
+
 ![FARMSIGHT Logo](link-to-your-logo-image)
 
 ## Overview
