@@ -6,7 +6,7 @@
 
 ## Overview
 
-**FARMSIGHT** is an innovative autonomous rover designed to enhance modern farming through real-time data processing and analysis. Built around the Sipeed Maxduino microcontroller, this rover integrates advanced sensors and wireless technology to provide farmers with critical insights on soil health, plant conditions, and optimal resource management.
+**FARMSIGHT**  is a versatile, autonomous rover designed to revolutionize modern agriculture by delivering real-time data insights for efficient field management. Using the Sipeed Maixduino microcontroller with Edge AI capabilities, FARMSIGHT collects and analyzes data on soil conditions, plant health, and environmental parameters, enabling farmers to make data-driven decisions. The rover features detachable sensor modules for flexibility, robust wireless connectivity, and the option for remote or autonomous control.
 
 ## Table of Contents
 
@@ -23,22 +23,22 @@
 
 ## Features
 
-- **Autonomous Navigation**: Utilizes ultrasonic sensors for obstacle avoidance and GPS for location tracking.
-- **Soil Analysis**: Measures soil moisture and pH levels to provide insights for optimal crop health.
-- **Plant Disease Detection**: Integrates a camera and TensorFlow Lite for real-time identification of plant diseases.
-- **Wireless Data Transmission**: Sends collected data to the Blynk cloud for real-time monitoring and analysis.
-- **Energy Efficient Design**: Carefully selected components for optimal battery performance.
+- Autonomous Navigation: Utilizes multiple sensors for obstacle detection, terrain adaptation, and fixed-path navigation.
+- Soil Health Analysis: Measures soil moisture and other environmental factors to optimize crop health and growth.
+- Edge AI Plant Analysis: Integrated camera and AI model on the Maixduino for on-device plant health monitoring and disease detection.
+- Wireless Data Transmission: Sends sensor data to Arduino Cloud for real-time monitoring and analysis from any location.
+- Modular Design: Features detachable sensor and analysis modules, allowing easy customization for various field tasks.
 
 ## Technical Specifications
 
-- **Microcontroller**: Sipeed Maxduino (K210 chip)
-- **Power Supply**: 12V Li-ion battery
-- **Sensors**:
-  - Ultrasonic Sensor (for obstacle detection)
-  - Capacitive Soil Moisture Sensor
-  - pH Sensor
-- **Communication**: ESP32 for wireless data transmission
-- **Motor Control**: H-bridge motor driver for DC motors
+- **Microcontroller** Sipeed Maixduino (K210 chip)
+- Supporting Controllers: Arduino Mega 2560 and ESP32 for sensor integration and wireless data transmission
+- Power Supply: 12V Li-Po battery and 7.4V Li-ion battery for reliable field operation
+- Sensors:Capacitive Soil Moisture Sensor for moisture analysis
+- Environmental sensors for air quality and pH levels
+- Camera Module for plant image analysis
+- Communication: ESP32 for Wi-Fi and cloud data transfer
+- Motor Control: Cytron MDD20A motor drivers and high-torque servos for maneuvering on rough terrain
 
 ## Components
 
@@ -66,17 +66,24 @@ graph LR
     G --> H[DC Motors]
 ```
 ## Usage
-- Connect all components as per the circuit diagram.
-- Power on the rover.
-- Use the Blynk app to monitor soil conditions and control the rover wirelessly.
-- Collect data on soil health and plant conditions in real-time.
-- Future Enhancements
-- Integrate solar power for sustainable energy use.
-- Expand the dataset for plant disease detection to improve accuracy.
-- Implement machine learning algorithms for predictive analysis.
+Power On:
+
+Ensure batteries are fully charged, then power on the rover.
+Use the emergency kill switch to quickly disable the rover if needed.
+Operational Modes:
+
+Autonomous Mode: Set a fixed path using the control software, and the rover will navigate independently, collecting data and transmitting it to the cloud.
+Remote-Controlled Mode: Use Bluetooth or the Arduino Cloud dashboard to control the rover remotely, ideal for areas needing precise control.
+Data Collection:
+
+The rover will continuously gather soil moisture, environmental, and image data for cloud analysis.
+View real-time data through the Arduino Cloud dashboard or mobile app.
+
 
 ## License
 See the LICENSE file for more details.
 
 ### Acknowledgments
 Thank you to Sipeed for sponsoring the project.(CIRCUIT DIGEST)
+
+Note: For this submission, I am setting up the system on one or two controllers while continuously working on integrating all components. Due to limited library support on the Sipeed Maixduino, I am developing custom configurations and libraries to meet project requirements before the deadline.
