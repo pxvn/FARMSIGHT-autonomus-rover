@@ -6,7 +6,7 @@
 
 ## Overview
 
-**FARMSIGHT**  is a versatile, autonomous rover designed to revolutionize modern agriculture by delivering real-time data insights for efficient field management. Using the Sipeed Maixduino microcontroller with Edge AI capabilities, FARMSIGHT collects and analyzes data on soil conditions, plant health, and environmental parameters, enabling farmers to make data-driven decisions. The rover features detachable sensor modules for flexibility, robust wireless connectivity, and the option for remote or autonomous control.
+**FARMSIGHT**  is a versatile, autonomous rover designed to revolutionize modern agriculture by delivering real-time data insights for efficient field management. Using the Sipeed Maixduino microcontroller, FARMSIGHT collects and analyzes data on soil conditions, plant health, and environmental parameters, enabling farmers to make data-driven decisions. The rover features detachable sensor modules for flexibility, robust wireless connectivity, and the option for remote or autonomous control.
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@
 ## Technical Specifications
 
 - **Microcontroller** Sipeed Maixduino (K210 chip)
-- Supporting Controllers: Arduino Mega 2560 and ESP32 for sensor integration and wireless data transmission
+- Supporting Controllers: (as of now) Arduino Mega 2560 and ESP32 for sensor integration and wireless data transmission
 - Power Supply: 12V Li-Po battery and 7.4V Li-ion battery for reliable field operation
 - Sensors:Capacitive Soil Moisture Sensor for moisture analysis
 - Environmental sensors for air quality and pH levels
@@ -70,11 +70,13 @@ Power On:
 
 Ensure batteries are fully charged, then power on the rover.
 Use the emergency kill switch to quickly disable the rover if needed.
-Operational Modes:
 
-Autonomous Mode: Set a fixed path using the control software, and the rover will navigate independently, collecting data and transmitting it to the cloud.
-Remote-Controlled Mode: Use Bluetooth or the Arduino Cloud dashboard to control the rover remotely, ideal for areas needing precise control.
-Data Collection:
+## Operational Modes:
+
+### Autonomous Mode: Set a fixed path using the control software, and the rover will navigate independently, collecting data and transmitting it to the cloud.
+### Remote-Controlled Mode: Use Bluetooth or the Arduino Cloud dashboard to control the rover remotely, ideal for areas needing precise control.
+
+## Data Collection:
 
 The rover will continuously gather soil moisture, environmental, and image data for cloud analysis.
 View real-time data through the Arduino Cloud dashboard or mobile app.
