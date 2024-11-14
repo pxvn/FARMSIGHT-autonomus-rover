@@ -1,5 +1,3 @@
-
-
 #network_wiznet5k()
 
 SSID = "0000"
