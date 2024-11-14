@@ -3,8 +3,11 @@
 ## Overview
 FarmSight Field Survey Rover is a versatile, field-ready rover designed for data collection and monitoring in agricultural environments. Equipped with a range of sensors, real-time streaming capabilities, and a servo-driven arm with modular attachments, FarmSight gathers actionable data to optimize farm management. This rover is powered by the Seeed Maixduino K210 and Arduino Mega 2560, selected for their robust processing power and extensive I/O capabilities, respectively.
 
+## YT Video
 <p align="center">
-  <img src="path_to_main_thumbnail_image.jpg" alt="FarmSight Rover Thumbnail" width="600">
+  <a href="https://youtu.be/Q7DP26K7eiE" target="_blank">
+    <img src="https://img.youtube.com/vi/Q7DP26K7eiE/0.jpg" alt="Watch FarmSight Demo Video" width="600">
+  </a>
 </p>
 
 ---
@@ -20,7 +23,43 @@ FarmSight Field Survey Rover is a versatile, field-ready rover designed for data
 
 ---
 
+## Features
+
+- **Real-Time Video Streaming**  
+  [See it in Action!](#demo-and-gallery)
+
+- **Interactive GUI**  
+  [Demo the Interface](#software-and-gui-interface)
+
+- **Autonomous & Manual Control**  
+  Switch between autonomous and manual modes. [Learn More](#software-and-gui-interface)
+
+- **Modular Sensor System**  
+  Detachable sensors for soil, air, and more. [See Sensor Attachments](#hardware-and-electronics)
+
+- **LED State Indicators**  
+  Visual feedback via WS2812B LEDs. [View LED Status Indicators](#methodology-and-design)
+
+- **Versatile Rover Design**  
+  Rocker-bogie system for stability. [Rover in Action](#demo-and-gallery)
+
+- **Remote Control (500m range)**  
+  Control via FS-i6 with up to 500m range. [Control Demo](#demo-and-gallery)
+
+- **Live Data Recording**  
+  Record videos and sensor data directly. [Check Recording Feature](#software-and-gui-interface)
+
+- **Multi-Sensor Integration**  
+  Real-time environmental monitoring. [See Sensors in Action](#hardware-and-electronics)
+
+---
+
 ## Hardware and Electronics
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dbb3bf43-1578-493a-95c4-b947194a8f82" alt="FarmSight Rover Thumbnail" width="600">
+</p>
+
+
 
 | Component            | Specification                    | Quantity |
 |----------------------|----------------------------------|----------|
@@ -29,7 +68,7 @@ FarmSight Field Survey Rover is a versatile, field-ready rover designed for data
 | **Motor Drivers**    | Cytron MDD20A                    | 3        |
 | **Servos**           | Dual Shaft 16kg metal gear      | 3        |
 | **Power Supply**     | Dual battery (7.4V and 12V)     | 1 each   |
-| **LED Feedback**     | WS2812B LEDs                    | -        |
+| **LED Feedback**     | WS2812B LED                    | 1        |
 | **Chassis**          | Aluminum frame with rocker-bogie design | 1  |
 | **Remote Control**   | FS-i6 Transmitter               | 1        |
 
@@ -39,6 +78,7 @@ FarmSight Field Survey Rover is a versatile, field-ready rover designed for data
 ### Microcontroller Functions
 - **Seeed Maixduino K210:** Handles AI-based image processing, video streaming, and WiFi communication.
 - **Arduino Mega 2560:** Manages motor control, servo movements, and sensor data collection.
+
 
 ---
 
@@ -53,7 +93,7 @@ FarmSight Field Survey Rover is a versatile, field-ready rover designed for data
   - Interactive control buttons for movement and arm adjustments
 
 <p align="center">
-  <img src="path_to_GUI_screenshot.jpg" alt="GUI Screenshot" width="600">
+  <img src="https://github.com/user-attachments/assets/86160e37-0115-4db4-bfee-031932d1ad78" alt="GUI Screenshot" width="600">
 </p>
 
 ### Control Modes
@@ -70,12 +110,11 @@ FarmSight Field Survey Rover is a versatile, field-ready rover designed for data
 
 ## System Architecture
 
-### Block Diagram
-<p align="center">
-  <img src="path_to_circuit_diagram.jpg" alt="System Architecture" width="600">
-</p>
-
 ### Circuit Diagram Explanation
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/82190d08-dbb4-495d-8b9b-dc3eb0264aa5" alt="CIRCUIT DIAGRAM" width="600">
+</p>
 The system integrates multiple components controlled by the Seeed Maixduino K210 and Arduino Mega 2560. The K210 handles video streaming, while the Mega 2560 manages motor control, servo actions, and sensor data. Power is supplied via dual batteries, regulated by a buck converter.
 
 ---
@@ -102,39 +141,39 @@ FarmSight is optimized for agricultural fieldwork, offering remote, efficient na
 ---
 
 ## Installation and Code
-
-### GitHub Repository
-Find the full project code on [GitHub](https://github.com/pxvn/FarmSight-Field-Survey-Rover).
+   
 
 #### Key Code Features
 - **Server Side:**
   - Establishes GUI, streams live data, processes image data, and manages controls.
-- **Client Side:**
+- **Client Side (Maixduino K210):**
   - Captures images, manages network communication, and transmits data.
 - **Arduino Mega 2560:**
   - Manages servo controls, motor drivers, and LED animations for feedback.
 
 ### Code Snippets
-```python
-# GUI Server Setup
-import pygame
-import socket
-from PIL import Image
 
-# Initialize Pygame and setup display
-pygame.init()
-screen = pygame.display.set_mode((800, 600))
-# Further GUI code here...
 
-```
-Demo and Gallery
+### Demo and Gallery
+
 Live Video Streaming and Record Feature
+
 <p align="center"> <img src="path_to_recorded_gif.gif" alt="Recorded GIF Feature" width="600"> </p>
+
 Field Demonstration
-<p align="center"> <img src="path_to_youtube_video.jpg" alt="Demo Video" width="600"> <br>Watch the rover in action on [YouTube](https://youtu.be/your_video_link) </p>
+## Demo Video
+<p align="center">
+  <a href="https://youtu.be/Q7DP26K7eiE" target="_blank">
+    <img src="https://img.youtube.com/vi/Q7DP26K7eiE/0.jpg" alt="Watch FarmSight Demo Video" width="600">
+  </a>
+</p>
+
 Component Image
 <p align="center"> <img src="path_to_components_image.jpg" alt="Components" width="600"> </p>
-Summary
-FarmSight Field Survey Rover provides a comprehensive solution for agricultural monitoring with advanced data collection, real-time analysis, and versatile control. From rugged hardware to user-friendly software, this rover empowers precision farming with technology.
 
-For additional resources, diagrams, and setup details, refer to the GitHub repository.
+### Additional info 
+
+- **Versatile Rover Design**  
+  Sturdy, all-terrain design (2 x 1.5 ft, approx. 5kg) with a rocker-bogie suspension for stability over rough surfaces.
+**Runtime**  
+  Operates for approximately 15-20 minutes on a single charge, suitable for field analysis sessions.
