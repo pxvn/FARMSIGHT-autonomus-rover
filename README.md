@@ -59,8 +59,6 @@ FarmSight Field Survey Rover is a versatile, field-ready rover designed for data
   <img src="https://github.com/user-attachments/assets/dbb3bf43-1578-493a-95c4-b947194a8f82" alt="FarmSight Rover Thumbnail" width="600">
 </p>
 
-
-
 | Component            | Specification                    | Quantity |
 |----------------------|----------------------------------|----------|
 | **Microcontrollers** | Seeed Maixduino K210, Arduino Mega 2560 | 1 each   |
@@ -78,7 +76,6 @@ FarmSight Field Survey Rover is a versatile, field-ready rover designed for data
 ### Microcontroller Functions
 - **Seeed Maixduino K210:** Handles AI-based image processing, video streaming, and WiFi communication.
 - **Arduino Mega 2560:** Manages motor control, servo movements, and sensor data collection.
-
 
 ---
 
@@ -99,7 +96,7 @@ FarmSight Field Survey Rover is a versatile, field-ready rover designed for data
 ### Control Modes
 - **Manual Control:** Via FS-i6 transmitter for real-time navigation.
 - **Autonomous Mode:** Pre-programmed paths for hands-free operation.
-  
+
 ### Lighting Effects
 - WS2812B LEDs provide visual feedback for states like moving, idle, or braking.
 
@@ -141,26 +138,31 @@ FarmSight is optimized for agricultural fieldwork, offering remote, efficient na
 ---
 
 ## Installation and Code
-   
 
-#### Key Code Features
-- **Server Side:**
-  - Establishes GUI, streams live data, processes image data, and manages controls.
-- **Client Side (Maixduino K210):**
-  - Captures images, manages network communication, and transmits data.
-- **Arduino Mega 2560:**
-  - Manages servo controls, motor drivers, and LED animations for feedback.
+For the code implementation, check out the following files in the repository:
+
+- **[Server Side Code](https://github.com/pxvn/FARMSIGHT-autonomus-rover/blob/main/boot.py)**  
+  Handles server-side operations such as GUI, image processing, and control management.
+  
+- **[Client Side Code (Maixduino K210)](https://github.com/pxvn/FARMSIGHT-autonomus-rover/blob/main/megarover.ino)**  
+  Manages client-side operations, such as image capture, network communication, and data transmission.
+  
+- **[Arduino Mega 2560 Code](https://github.com/pxvn/FARMSIGHT-autonomus-rover/blob/main/rovergui.py)**  
+  Controls motor drivers, servos, and LEDs, handling the physical rover movements.
 
 ### Code Snippets
 
+!! You can find detailed explanations and code snippets in each of these files that implement the various rover functionalities.
 
-### Demo and Gallery
---
+---
 
+## Demo and Gallery
+---
 
-### Additional info 
+## Additional info
 
 - **Versatile Rover Design**  
   Sturdy, all-terrain design (2 x 1.5 ft, approx. 5kg) with a rocker-bogie suspension for stability over rough surfaces.
-**Runtime**  
+  
+- **Runtime**  
   Operates for approximately 15-20 minutes on a single charge, suitable for field analysis sessions.
