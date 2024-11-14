@@ -1,9 +1,4 @@
-# This file is part of MaixPY
-# Copyright (c) sipeed.com
-#
-# Licensed under the MIT license:
-#   http://www.opensource.org/licenses/mit-license.php
-#
+
 
 #network_wiznet5k()
 
@@ -138,13 +133,6 @@ while True:
     print("close now")
     sock.close()
 
-'''
-    ESP32_SPI firmware version: 1.4.0
-    try AT connect wifi...
-    network state: True ('192.168.0.180', '255.255.255.0', '192.168.0.1')
-    ping baidu.com: 40 ms
-    >
-    MicroPython v0.5.1-136-g039f72b6c-dirty on 2020-11-18; Sipeed_M1 with kendryte-k210
-    Type "help()" for more information.
+)
     >>>
 '''
