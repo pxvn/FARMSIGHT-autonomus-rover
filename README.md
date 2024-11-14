@@ -86,6 +86,6 @@ View real-time data through the Arduino Cloud dashboard or mobile app.
 See the LICENSE file for more details.
 
 ### Acknowledgments
-Thank you to Sipeed for sponsoring the project.(CIRCUIT DIGEST)
+Thank you to DigiKey for supporting the project.
 
 Note: For this submission, I am setting up the system on one or two controllers while continuously working on integrating all components. Due to limited library support on the Sipeed Maixduino, I am developing custom configurations and libraries to meet project requirements before the deadline.
