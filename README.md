@@ -155,21 +155,8 @@ FarmSight is optimized for agricultural fieldwork, offering remote, efficient na
 
 
 ### Demo and Gallery
+--
 
-Live Video Streaming and Record Feature
-
-<p align="center"> <img src="path_to_recorded_gif.gif" alt="Recorded GIF Feature" width="600"> </p>
-
-Field Demonstration
-## Demo Video
-<p align="center">
-  <a href="https://youtu.be/Q7DP26K7eiE" target="_blank">
-    <img src="https://img.youtube.com/vi/Q7DP26K7eiE/0.jpg" alt="Watch FarmSight Demo Video" width="600">
-  </a>
-</p>
-
-Component Image
-<p align="center"> <img src="path_to_components_image.jpg" alt="Components" width="600"> </p>
 
 ### Additional info 
 
