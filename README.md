@@ -1,91 +1,140 @@
-# FARMSIGHT: Autonomous Field Surveyor Rover
-
-(UNDER DEVLOPMENT)
-
-![FARMSIGHT Logo](link-to-your-logo-image)
+# **FarmSight Field Survey Rover**
 
 ## Overview
+FarmSight Field Survey Rover is a versatile, field-ready rover designed for data collection and monitoring in agricultural environments. Equipped with a range of sensors, real-time streaming capabilities, and a servo-driven arm with modular attachments, FarmSight gathers actionable data to optimize farm management. This rover is powered by the Seeed Maixduino K210 and Arduino Mega 2560, selected for their robust processing power and extensive I/O capabilities, respectively.
 
-**FARMSIGHT**  is a versatile, autonomous rover designed to revolutionize modern agriculture by delivering real-time data insights for efficient field management. Using the Sipeed Maixduino microcontroller, FARMSIGHT collects and analyzes data on soil conditions, plant health, and environmental parameters, enabling farmers to make data-driven decisions. The rover features detachable sensor modules for flexibility, robust wireless connectivity, and the option for remote or autonomous control.
+<p align="center">
+  <img src="path_to_main_thumbnail_image.jpg" alt="FarmSight Rover Thumbnail" width="600">
+</p>
+
+---
 
 ## Table of Contents
+1. [Hardware and Electronics](#hardware-and-electronics)
+2. [Software and GUI Interface](#software-and-gui-interface)
+3. [System Architecture](#system-architecture)
+4. [Methodology and Design](#methodology-and-design)
+5. [Applications and Impact](#applications-and-impact)
+6. [Installation and Code](#installation-and-code)
+7. [Demo and Gallery](#demo-and-gallery)
 
-- [Features](#features)
-- [Technical Specifications](#technical-specifications)
-- [Components](#components)
-- [System Architecture](#system-architecture)
-- [Circuit Diagram](#circuit-diagram)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Future Enhancements](#future-enhancements)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+---
 
-## Features
+## Hardware and Electronics
 
-- Autonomous Navigation: Utilizes multiple sensors for obstacle detection, terrain adaptation, and fixed-path navigation.
-- Soil Health Analysis: Measures soil moisture and other environmental factors to optimize crop health and growth.
-- Edge AI Plant Analysis: Integrated camera and AI model on the Maixduino for on-device plant health monitoring and disease detection.
-- Wireless Data Transmission: Sends sensor data to Arduino Cloud for real-time monitoring and analysis from any location.
-- Modular Design: Features detachable sensor and analysis modules, allowing easy customization for various field tasks.
+| Component            | Specification                    | Quantity |
+|----------------------|----------------------------------|----------|
+| **Microcontrollers** | Seeed Maixduino K210, Arduino Mega 2560 | 1 each   |
+| **Motors**           | IG32 DC Motors with encoders    | 6        |
+| **Motor Drivers**    | Cytron MDD20A                    | 3        |
+| **Servos**           | Dual Shaft 16kg metal gear      | 3        |
+| **Power Supply**     | Dual battery (7.4V and 12V)     | 1 each   |
+| **LED Feedback**     | WS2812B LEDs                    | -        |
+| **Chassis**          | Aluminum frame with rocker-bogie design | 1  |
+| **Remote Control**   | FS-i6 Transmitter               | 1        |
 
-## Technical Specifications
+**Additional Components:**
+- PVC pipes, CNC-cut MDF parts, silver foil, nuts, bolts, and zip ties.
 
-- **Microcontroller** Sipeed Maixduino (K210 chip)
-- Supporting Controllers: (as of now) Arduino Mega 2560 and ESP32 for sensor integration and wireless data transmission
-- Power Supply: 12V Li-Po battery and 7.4V Li-ion battery for reliable field operation
-- Sensors:Capacitive Soil Moisture Sensor for moisture analysis
-- Environmental sensors for air quality and pH levels
-- Camera Module for plant image analysis
-- Communication: ESP32 for Wi-Fi and cloud data transfer
-- Motor Control: Cytron MDD20A motor drivers and high-torque servos for maneuvering on rough terrain
+### Microcontroller Functions
+- **Seeed Maixduino K210:** Handles AI-based image processing, video streaming, and WiFi communication.
+- **Arduino Mega 2560:** Manages motor control, servo movements, and sensor data collection.
 
-## Components
+---
 
-| Component                     | Description                                                                 |
-|-------------------------------|-----------------------------------------------------------------------------|
-| Sipeed Maxduino               | The main microcontroller for processing data and controlling functions.     |
-| Ultrasonic Sensor             | Used for obstacle avoidance during navigation.                              |
-| Soil Moisture Sensor          | Measures moisture levels in the soil.                                      |
-| pH Sensor                     | Measures the pH level of the soil for health assessment.                   |
-| Camera Module                 | Captures images for plant analysis and disease detection.                  |
-| ESP32                         | Provides Wi-Fi connectivity for data transmission to the cloud.            |
-| H-bridge Motor Driver         | Controls the movement of DC motors based on commands from the microcontroller. |
-| 12V Li-ion Battery            | Powers the entire system, ensuring portability and efficiency.             |
+## Software and GUI Interface
+
+### Graphical User Interface (GUI)
+- **Platform:** Python with Pygame
+- **Features:**
+  - Real-time data display from sensors
+  - Video streaming with recording option
+  - Battery and signal strength indicators
+  - Interactive control buttons for movement and arm adjustments
+
+<p align="center">
+  <img src="path_to_GUI_screenshot.jpg" alt="GUI Screenshot" width="600">
+</p>
+
+### Control Modes
+- **Manual Control:** Via FS-i6 transmitter for real-time navigation.
+- **Autonomous Mode:** Pre-programmed paths for hands-free operation.
+  
+### Lighting Effects
+- WS2812B LEDs provide visual feedback for states like moving, idle, or braking.
+
+### Image Processing and Streaming
+- The K210 enhances image saturation and streams video to the GUI for real-time monitoring, with day and night visibility.
+
+---
 
 ## System Architecture
 
-```mermaid
-graph LR
-    A[Power Supply<br>(12V Li-ion Battery)] --> B[ESP32 Microcontroller]
-    B --> C[Ultrasonic Sensor]
-    B --> D[Soil Moisture Sensor]
-    B --> E[pH Sensor]
-    B --> F[Camera Module]
-    B --> G[Motor Driver]
-    G --> H[DC Motors]
+### Block Diagram
+<p align="center">
+  <img src="path_to_circuit_diagram.jpg" alt="System Architecture" width="600">
+</p>
+
+### Circuit Diagram Explanation
+The system integrates multiple components controlled by the Seeed Maixduino K210 and Arduino Mega 2560. The K210 handles video streaming, while the Mega 2560 manages motor control, servo actions, and sensor data. Power is supplied via dual batteries, regulated by a buck converter.
+
+---
+
+## Methodology and Design
+
+FarmSight's design focuses on adaptability and ease of operation over challenging terrain. With a rocker-bogie suspension, the rover navigates rough fields while maintaining stability. The aluminum chassis, reinforced with silver foil, provides durability and weather resistance.
+
+| Component           | Purpose                                                |
+|---------------------|--------------------------------------------------------|
+| **Rocker-Bogie Chassis** | Enables stable movement across uneven terrain       |
+| **Servo Arm**       | Supports modular sensor attachments for field analysis |
+| **LED Feedback**    | Enhances visibility and communication with the operator |
+
+---
+
+## Applications and Impact
+
+FarmSight is optimized for agricultural fieldwork, offering remote, efficient navigation over rough terrain. It enables:
+- **Precision Irrigation:** Using soil moisture data for targeted watering.
+- **Crop Health Monitoring:** Real-time camera feed helps assess plant health.
+- **Modular Attachments:** Allows sensor swapping for a variety of tasks, from soil sampling to environmental monitoring.
+
+---
+
+## Installation and Code
+
+### GitHub Repository
+Find the full project code on [GitHub](https://github.com/pxvn/FarmSight-Field-Survey-Rover).
+
+#### Key Code Features
+- **Server Side:**
+  - Establishes GUI, streams live data, processes image data, and manages controls.
+- **Client Side:**
+  - Captures images, manages network communication, and transmits data.
+- **Arduino Mega 2560:**
+  - Manages servo controls, motor drivers, and LED animations for feedback.
+
+### Code Snippets
+```python
+# GUI Server Setup
+import pygame
+import socket
+from PIL import Image
+
+# Initialize Pygame and setup display
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+# Further GUI code here...
+
 ```
-## Usage
-Power On:
+Demo and Gallery
+Live Video Streaming and Record Feature
+<p align="center"> <img src="path_to_recorded_gif.gif" alt="Recorded GIF Feature" width="600"> </p>
+Field Demonstration
+<p align="center"> <img src="path_to_youtube_video.jpg" alt="Demo Video" width="600"> <br>Watch the rover in action on [YouTube](https://youtu.be/your_video_link) </p>
+Component Image
+<p align="center"> <img src="path_to_components_image.jpg" alt="Components" width="600"> </p>
+Summary
+FarmSight Field Survey Rover provides a comprehensive solution for agricultural monitoring with advanced data collection, real-time analysis, and versatile control. From rugged hardware to user-friendly software, this rover empowers precision farming with technology.
 
-Ensure batteries are fully charged, then power on the rover.
-Use the emergency kill switch to quickly disable the rover if needed.
-
-## Operational Modes:
-
-### Autonomous Mode: Set a fixed path using the control software, and the rover will navigate independently, collecting data and transmitting it to the cloud.
-### Remote-Controlled Mode: Use Bluetooth or the Arduino Cloud dashboard to control the rover remotely, ideal for areas needing precise control.
-
-## Data Collection:
-
-The rover will continuously gather soil moisture, environmental, and image data for cloud analysis.
-View real-time data through the Arduino Cloud dashboard or mobile app.
-
-
-## License
-See the LICENSE file for more details.
-
-### Acknowledgments
-Thank you to DigiKey for supporting the project.
-
-Note: For this submission, I am setting up the system on one or two controllers while continuously working on integrating all components. Due to limited library support on the Sipeed Maixduino, I am developing custom configurations and libraries to meet project requirements before the deadline.
+For additional resources, diagrams, and setup details, refer to the GitHub repository.
