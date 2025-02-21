@@ -1,5 +1,10 @@
-#!/usr/bin/env python3
-# code for boot and fully functiona gui with recodrd in gif wasd controll
+'''
+ * !/usr/bin/env python3
+ * code for boot and fully functiona gui with recodrd in gif wasd controll
+ * Main Program for server side pygame based GUI for farmsight rover 
+ * Author: Pavan Kalsariya 
+'''
+
 import socket
 import threading
 import pygame
