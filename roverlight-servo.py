@@ -1,3 +1,10 @@
+'''
+ * CODE FOR WS NEOPIXEL LED RING LIGHT WITH SERVO
+ * FOR USE WITH MAIXDUINO 
+ * FARMSIGHT FIELD SURVEY ROVER
+ * Author: Pavan Kalsariya 
+'''
+
 import time
 import math
 from modules import ws2812
