@@ -1,3 +1,11 @@
+/*
+ * Program for DISPLAYING SCROLLING TEXT ON 4X DOTMATRIX 
+ * MICROCONTROLLER - ARDUINO MEGA
+ * Author: Pavan Kalsariya
+ * Teenage Engineering Works
+ * Update Counter: 4
+ */
+
 #include <MD_Parola.h>
 #include <MD_MAX72xx.h>
 #include <SPI.h>
