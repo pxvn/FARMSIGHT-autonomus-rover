@@ -1,3 +1,12 @@
+/*
+ * Main Program functioning of maixduino with farmsight rover
+ * Video transmition with udp
+ * Author: Pavan Kalsariya
+ * Teenage Engineering Works
+ * Update Counter: 4
+ */
+
+
 #network_wiznet5k()
 
 SSID = "0000"
