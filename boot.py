@@ -1,9 +1,9 @@
 /*
+ * CLIENT SIDE CODE (TO BE CONNECTED WITH PYGAME BASED GUI)
  * Main Program functioning of maixduino with farmsight rover
  * Video transmition with udp
  * Author: Pavan Kalsariya
- * Teenage Engineering Works
- * Update Counter: 4
+ * MADE WIH MULTIPLE ITTRATIONS OF TRIALS AND ERRORS... AS NO RESOURCES AND REFERENCES AVAILABLE AT THE TIME OF DEVLOPMENT
  */
 
 
